@@ -6,10 +6,11 @@ import Home from './src/screens/Home'
 import Profile from './src/screens/Profile'
 import AuthScreen from './src/screens/AuthScreen'
 import {firebaseSanityCheck} from './src/utils/firebaseTest'
+import { authListener } from './src/auth/useAuthListener';
 
 export default function App() {
   useEffect(() => {
-    firebaseSanityCheck();
+    authListener();
   }, []);
   return (
     <View style={{flex: 1}}>
